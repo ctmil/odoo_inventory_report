@@ -21,7 +21,7 @@
 
 {
     'name': 'Odoo Inventory Pivot Report',
-    'version': '0.1.1',
+    'version': '0.1.2',
     'category': 'Stock',
     'description': "",
     'author': 'Moldeo Interactive',

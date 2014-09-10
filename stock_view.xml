@@ -46,7 +46,7 @@
         <field name="res_model">stock.inventory.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">graph</field>
-        <field name="context">{'search_default_product':1,'group_by':[]}</field>
+        <field name="context">{'search_default_product':1,'group_by':['location_id','familia']}</field>
         <field name="view_id" ref="view_stock_inventory_graph" />
         <field name="search_view_id" ref="view_stock_inventory_filter" />
     </record>
