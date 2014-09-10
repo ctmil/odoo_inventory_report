@@ -8,6 +8,12 @@
          <field name="arch" type="xml">
              <graph string="Inventory Analysis" type="pivot" stacked="True">
                  <field name="product_id" type="row"/>
+                 <field name="familia" type="row"/>
+                 <field name="categoria" type="row"/>
+                 <field name="version" type="row"/>
+                 <field name="subcategoria" type="row"/>
+                 <field name="sba_code" type="row"/>
+                 <field name="sba_sku_no" type="row"/>
                  <field name="location_id" type="col"/>
                  <field name="cost" type="measure"/>
                  <field name="qty" type="measure"/>
@@ -24,6 +30,10 @@
 	            <group expand="1" string="Group By ...">
 	                   <filter string="Location" icon="terp-stage" domain="[]" context="{'group_by':'location_id'}" />
 	                   <filter string="Product" icon="terp-stage" domain="[]" context="{'group_by':'product_id'}" />
+	                   <filter string="Familia" icon="terp-stage" domain="[]" context="{'group_by':'familia'}" />
+	                   <filter string="Categoria" icon="terp-stage" domain="[]" context="{'group_by':'categoria'}" />
+	                   <filter string="Version" icon="terp-stage" domain="[]" context="{'group_by':'version'}" />
+	                   <filter string="SubCategoria" icon="terp-stage" domain="[]" context="{'group_by':'subcategoria'}" />
                     </group>
                </search>
             </field>
@@ -35,7 +45,7 @@
         <field name="name">Stock Inventory Report</field>
         <field name="res_model">stock.inventory.report</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">graph</field>
         <field name="context">{'search_default_product':1,'group_by':[]}</field>
         <field name="view_id" ref="view_stock_inventory_graph" />
         <field name="search_view_id" ref="view_stock_inventory_filter" />

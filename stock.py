@@ -3,13 +3,19 @@ from openerp import tools
 
  
 class stock_inventory_report(osv.osv):
-    _name = "stock.inventory.vat_report"
+    _name = "stock.inventory.report"
     _description = "Stock Inventory Report"
     _auto = False
     _columns = {
 	'product_id': fields.many2one('product.product','Product'),
-	'partner_id': fields.many2one('res.partner','Partner Name'),
-	'qty': fields.float('Tax Amount',readonly=True,group_operator="sum",digits=(16,2)),
+	'location_id': fields.many2one('stock.location','Location'),
+	'familia': fields.many2one('product.familia','Familia'),
+	'categoria': fields.many2one('product.categoria','Categoria'),
+	'version': fields.many2one('product.version','Version'),
+	'subcategoria': fields.many2one('product.subcategoria','Subcategoria'),
+	'sba_code': fields.char('SBA Code'),
+	'sba_sku_no': fields.char('SBA SKU No'),
+	'qty': fields.float('Quantity',readonly=True,group_operator="sum",digits=(16,2)),
 	'cost': fields.float('Cost',readonly=True,group_operator="avg",digits=(16,2)), 
 	}
  
@@ -17,7 +23,8 @@ class stock_inventory_report(osv.osv):
         tools.sql.drop_view_if_exists(cr, 'stock_inventory_report')
 	cr.execute("""
 		create or replace view stock_inventory_report as (
-		select  a.id as id,a.product_id,a.location_id,avg(a.cost) as cost,sum(a.qty) as qty from stock_quant group by 1,2
+		select  a.id as id,a.product_id,a.location_id,b.familia,b.categoria,b.version,b.subcategoria,b.sba_code,b.sba_sku_no,a.cost,a.qty 
+			from stock_quant a inner join product_product b on a.product_id = b.id)
 	""")	
  
 stock_inventory_report()

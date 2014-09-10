@@ -21,13 +21,13 @@
 
 {
     'name': 'Odoo Inventory Pivot Report',
-    'version': '0.1',
+    'version': '0.1.1',
     'category': 'Stock',
     'description': "",
     'author': 'Moldeo Interactive',
     'website': 'http://business.moldeo.coop/',
     'images': [],
-    'depends': ['stock'],
+    'depends': ['stock','sba_sales'],
     'demo': [],
     'data': ['stock_view.xml'],
     'test': [],
