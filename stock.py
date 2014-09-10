@@ -16,7 +16,7 @@ class stock_inventory_report(osv.osv):
 	'sba_code': fields.char('SBA Code'),
 	'sba_sku_no': fields.char('SBA SKU No'),
 	'qty': fields.float('Quantity',readonly=True,group_operator="sum",digits=(16,2)),
-	'cost': fields.float('Cost',readonly=True,group_operator="avg",digits=(16,2)), 
+	'cost': fields.float('Cost',readonly=True,group_operator="sum",digits=(16,2)), 
 	}
  
     def init(self, cr):
