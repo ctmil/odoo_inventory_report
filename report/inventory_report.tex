@@ -1,0 +1,37 @@
+\documentclass{report}
+${helper.set_language()}
+\usepackage{xltxtra}
+\usepackage{longtable}
+
+\usepackage{fontspec}
+\setmainfont{FreeSans}
+%% \setmainfont{Ryman Eco}
+%% \setmainfont{Gentium Book Basic}
+
+\title{Resumen de Clientes}
+\author{${user.name}}
+\logo{${helper.putImage(company.logo, scale=0.3)}}
+\name{${company.name}}
+
+\begin{document}
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.75\textwidth}|}
+	\hline
+	\textbf{Name} & \textbf{Address} \\
+	\hline
+\endfirsthead
+	\hline
+	\textbf{Name} & \textbf{Address} \\
+	\hline
+\endhead
+	\hline
+\endfoot
+	\hline
+\endlastfoot
+% for par in objects:  
+	${par.name | tex } & ${par.street or "" | tex } \\
+% endfor
+\end{longtable}
+
+\end{document}
+

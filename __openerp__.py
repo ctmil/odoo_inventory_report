@@ -27,10 +27,10 @@
     'author': 'Moldeo Interactive',
     'website': 'http://business.moldeo.coop/',
     'images': [],
-    'depends': ['stock','sba_sales'],
+    'depends': ['stock','sba_sales','report_latex'],
     'demo': [],
-    'data': ['stock_view.xml'],
-    'test': [],
+    'data': ['stock_view.xml','report/inventory_report.xml'],
+    'test': ['test/test_report.yml'],
     'installable': True,
 }
 
