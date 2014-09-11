@@ -28,8 +28,8 @@ ${helper.set_language()}
 \endfoot
 	\hline
 \endlastfoot
-% for par in objects:  
-	${par.name | tex } & ${par.street or "" | tex } \\
+% for line in objects:  
+${line.product_id.name|tex} & ${line.familia.name|tex} \\
 % endfor
 \end{longtable}
 

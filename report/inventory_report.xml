@@ -2,11 +2,11 @@
 <openerp>
     <data noupdate="1">
 	    <report
-		    string="Partner resume"
-		    id="latex_partner_print"
-		    model="res.partner"
-		    name="latex.resume_partner.print"
-		    file="report_latex/report/partner.tex"
+		    string="Print inventory report"
+		    id="inventory_report_print"
+		    model="stock.inventory.report"
+		    name="odoo_inventory_report.inventory_report.print"
+		    file="odoo_inventory_report/report/inventory_report.tex"
 		    report_type="latex"
 		    />
     </data>
